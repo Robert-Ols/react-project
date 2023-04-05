@@ -3,6 +3,7 @@ import styles from './List.module.scss';
 import { useState } from 'react';
 import shortid from 'shortid';
 import ColumnForm from '../ColumnForm/ColumnForm';
+import CardForm from '../CardForm/CardForm';
 
 const List = () => {
   const [columns, setColumns] = useState([
@@ -61,6 +62,7 @@ const addCard = (newCard, columnId) => {
         {columns.map(column => <Column key={column.id} id={column.id} title={column.title} icon={column.icon} cards={column.cards} />)}
       </section>
       <ColumnForm action={addColumn} />
+      <CardForm action={addCard}/>
     </div>
   );
 };
